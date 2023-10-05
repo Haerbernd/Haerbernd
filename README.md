@@ -1,4 +1,1 @@
-- 👋 Hi, I’m @Haerbernd
-- 👀 I’m interested in Gaming, Coding and Anime/Light Novel/Manga
-- 🌱 I’m currently learning html, CSS, JS, PHP
-- 📫 How to reach me Discord: Der sportliche Metzger#9465
+Hi I'm Haerbernd and a Python programmer
