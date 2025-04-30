@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ "$(id -u)" = "0" ]; then
+  echo "You can't execute this script as root (or with sudo)! Please run it as user"
+  exit 1
+fi
+
 sudo pacman -Syu
 sudo pacman -S --needed vim neovim # Install text editors
 sudo pacman -S --needed networkmanager nm-connection-editor network-manager-applet ppp # Install network management
