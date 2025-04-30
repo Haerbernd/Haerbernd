@@ -27,16 +27,16 @@ yay -S greetd-regreet-git # ReGreet is a greetd Greeter
 yay -S mullvad-vpn mullvad-tray
 
 rm ~/.config/hypr/hyprland.conf
-curl "" -o ~/.config/hypr/hyprland.conf # Download Hyprland config
-curl "" -o ~/.local/bin/make-screenshot.sh && chmod +x ~/.local/bin/make-screenshot.sh
+curl "" -o "~/.config/hypr/hyprland.conf # Download Hyprland config"
+curl "" -o "~/.local/bin/make-screenshot.sh && chmod +x ~/.local/bin/make-screenshot.sh"
 
 sudo pacman -S --needed mako pipewire wireplumber qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent
-curl "" -o ~/.config/hypr/xdph.conf
+curl "" -o "~/.config/hypr/xdph.conf"
 systemctl --user enable --now hyprpolkitagent.service
 echo "Hyprland was successfully installed..." && echo ""
 
 echo "Start installing further systems of the Hypr-Ecosystem"
-curl "" -o ~/hyprEcosystemSetup.sh
+curl "" -o "~/hyprEcosystemSetup.sh"
 ~./hyprEcosystemSetup.sh
 echo "Hypr-Ecosystem was successfully installed..."
 echo "Start removing installation script..."
