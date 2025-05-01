@@ -26,7 +26,7 @@ echo "Don't forget to add ´numlock´ in ´/etc/mkinitcpio.conf´ as described i
 
 echo "Start installation of Hyprland"
 # Hyprland installation
-sudo pacman -S --needed hyprland uwsm wofi dolphin
+sudo pacman -S --needed hyprland uwsm rofi dolphin
 sudo pacman -S --needed gtk4 rust greetd # Installs a login manager (greetd)
 yay -S greetd-regreet-git # ReGreet is a greetd Greeter
 yay -S mullvad-vpn mullvad-tray
@@ -34,6 +34,15 @@ yay -S mullvad-vpn mullvad-tray
 rm ~/.config/hypr/hyprland.conf
 curl "" -o "~/.config/hypr/hyprland.conf # Download Hyprland config"
 curl "" -o "~/.local/bin/make-screenshot.sh && chmod +x ~/.local/bin/make-screenshot.sh"
+
+# Needs to be appended to the ~/.bashrc for uwsm to start Hyprland on boot/login
+cat >> ~/.bashrc << 'EOF'
+
+if uwsm check may-start; then
+    exec uwsm start hyprland.desktop
+fi
+
+EOF
 
 sudo pacman -S --needed mako pipewire wireplumber qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent
 curl "" -o "~/.config/hypr/xdph.conf"
