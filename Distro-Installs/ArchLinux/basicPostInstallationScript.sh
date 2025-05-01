@@ -28,12 +28,13 @@ echo "Start installation of Hyprland"
 # Hyprland installation
 sudo pacman -S --needed hyprland uwsm rofi dolphin
 sudo pacman -S --needed gtk4 rust greetd # Installs a login manager (greetd)
+sudo pacman -S --needed slurp grim wl-clipboard
 yay -S greetd-regreet-git # ReGreet is a greetd Greeter
 yay -S mullvad-vpn mullvad-tray
 
 rm ~/.config/hypr/hyprland.conf
-curl "" -o "~/.config/hypr/hyprland.conf # Download Hyprland config"
-curl "" -o "~/.local/bin/make-screenshot.sh && chmod +x ~/.local/bin/make-screenshot.sh"
+curl "https://raw.githubusercontent.com/Haerbernd/Haerbernd/refs/heads/main/Distro-Installs/ArchLinux/dotfiles/configs/hypr/hyprland.conf" -o "~/.config/hypr/hyprland.conf # Download Hyprland config"
+curl "https://raw.githubusercontent.com/Haerbernd/Haerbernd/refs/heads/main/Distro-Installs/ArchLinux/dotfiles/localbin/make-screenshot.sh" -o "~/.local/bin/make-screenshot.sh" && chmod +x "~/.local/bin/make-screenshot.sh"
 
 # Needs to be appended to the ~/.bashrc for uwsm to start Hyprland on boot/login
 cat >> ~/.bashrc << 'EOF'
@@ -45,14 +46,20 @@ fi
 EOF
 
 sudo pacman -S --needed mako pipewire wireplumber qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent
-curl "" -o "~/.config/hypr/xdph.conf"
+curl "https://raw.githubusercontent.com/Haerbernd/Haerbernd/refs/heads/main/Distro-Installs/ArchLinux/dotfiles/configs/hypr/xdph.conf" -o "~/.config/hypr/xdph.conf"
 systemctl --user enable --now hyprpolkitagent.service
 echo "Hyprland was successfully installed..." && echo ""
 
 echo "Start installing further systems of the Hypr-Ecosystem"
-curl "" -o "~/hyprEcosystemSetup.sh"
+curl "https://raw.githubusercontent.com/Haerbernd/Haerbernd/refs/heads/main/Distro-Installs/ArchLinux/hyprEcosystemSetup.sh" -o "~/hyprEcosystemSetup.sh"
 ~./hyprEcosystemSetup.sh
 echo "Hypr-Ecosystem was successfully installed..."
 echo "Start removing installation script..."
 rm hyprEcosystemSetup.sh
 echo "done..." && echo ""
+
+# Start Installation of Development Environment
+curl "" -o "~/prepareDevelopmentEnvironmentScript.sh" && chmod +x "~/prepareDevelopmentEnvironmentScript.sh"
+~/prepareDevelopmentEnvironmentScript.sh
+rm "~/prepareDevelopmentEnvironmentScript.sh"
+
