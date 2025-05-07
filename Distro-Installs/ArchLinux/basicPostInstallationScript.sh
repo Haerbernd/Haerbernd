@@ -27,7 +27,6 @@ echo "Don't forget to add ´numlock´ in ´/etc/mkinitcpio.conf´ as described i
 echo "Start installation of Hyprland"
 # Hyprland installation
 sudo pacman -S --needed hyprland uwsm rofi dolphin archlinux-xdg-menu
-XDG_MENU_PREFIX=arch- kbuildsycoca6 # Make dolphin recognize xdg-mime default applications
 sudo pacman -S --needed gtk4 rust greetd # Installs a login manager (greetd)
 sudo pacman -S --needed slurp grim wl-clipboard
 yay -S greetd-regreet-git # ReGreet is a greetd Greeter
