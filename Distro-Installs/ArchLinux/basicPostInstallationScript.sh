@@ -45,6 +45,8 @@ fi
 
 EOF
 
+echo "export XDG_MENU_PREFIX=arch- kbuildsycoca6 # Make dolphin recognize xdg-mime default applications" >> ~/.bashrc
+
 sudo pacman -S --needed mako pipewire wireplumber qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent
 curl "https://raw.githubusercontent.com/Haerbernd/Haerbernd/refs/heads/main/Distro-Installs/ArchLinux/dotfiles/configs/hypr/xdph.conf" -o "~/.config/hypr/xdph.conf"
 systemctl --user enable --now hyprpolkitagent.service
