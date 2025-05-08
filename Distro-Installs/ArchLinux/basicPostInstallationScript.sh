@@ -45,8 +45,8 @@ fi
 
 EOF
 
-echo "export XDG_MENU_PREFIX=arch- kbuildsycoca6 # Make dolphin recognize xdg-mime default applications" >> ~/.bashrc
-echo "XDG_MENU_PREFIX=arch- kbuildsycoca6 # Make dolphin recognize xdg-mime default applications" >> ~/.bashrc  # Twice to make sure everything really works
+# echo "export XDG_MENU_PREFIX=arch- kbuildsycoca6 # Make dolphin recognize xdg-mime default applications" >> ~/.bashrc
+# echo "XDG_MENU_PREFIX=arch- kbuildsycoca6 # Make dolphin recognize xdg-mime default applications" >> ~/.bashrc  # Twice to make sure everything really works
 
 sudo pacman -S --needed mako pipewire wireplumber qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent
 curl "https://raw.githubusercontent.com/Haerbernd/Haerbernd/refs/heads/main/Distro-Installs/ArchLinux/dotfiles/configs/hypr/xdph.conf" -o "~/.config/hypr/xdph.conf"
