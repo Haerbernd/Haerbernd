@@ -10,7 +10,7 @@ vim.opt.smartindent = true
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.splitbelow = true
-vim.opt.splitright
+vim.opt.splitright = true
 vim.opt.termguicolors = true -- enable 24-bit RGB color in the TUI
 vim.opt.showmode = true -- set to false if you don't want to see the modes (e.g. "-- INSERT --")
 
